@@ -448,7 +448,7 @@ logger.error("Error message")
 
 Logs are output to stdout for Docker/Kubernetes compatibility.
 
-## 🚢 Deployment
+## Deployment
 
 ### Docker Deployment
 
