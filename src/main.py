@@ -13,7 +13,6 @@ app = FastAPI()
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.info("Instantiating FastAPI application...")
-settings = Settings()
 
 logger.info("Including routers...")
 app.include_router(document_indexing.router)

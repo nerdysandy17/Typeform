@@ -13,7 +13,8 @@ from src.predict.documents_indexing import DocumentsIndexing
 
 import os
 
-from src.settings import settings
+from src.settings import Settings
+import asyncio
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["documents_indexing"])
@@ -27,4 +28,4 @@ async def documents_indexing(
 
     logger.info(f"Starting new documents indexing and query task {request}")
     di = DocumentsIndexing()
-    return di.indexing_and_query(request.query)
+    return await asyncio.to_thread(di.indexing_and_query, request.query)

@@ -7,7 +7,7 @@ router = APIRouter()
 
 
 @router.get("/health", status_code=status.HTTP_200_OK, include_in_schema=False)
-def health_endpoint() -> str:
+def health_endpoint() -> dict[str, str]:
     """This endpoint is used to check the health of the API by
     monitoring and alerting services."""
     return {"message": "Hello World"}

@@ -2,7 +2,6 @@ import logging
 
 from pathlib import Path
 
-from llama_index.core import Settings
 from llama_index.core import VectorStoreIndex, get_response_synthesizer
 from llama_index.core import SimpleDirectoryReader
 from llama_index.core import StorageContext, load_index_from_storage
