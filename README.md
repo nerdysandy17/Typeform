@@ -4,28 +4,28 @@ A production-ready FastAPI application that provides intelligent document indexi
 
 ## 📋 Table of Contents
 
-- [Overview](#🎯-overview)
-- [Features](#✨-features)
-- [Architecture](#🏗-architecture)
-- [Technologies](#🛠-technologies)
-- [Project Structure](#📁-project-structure)
-- [Prerequisites](#📦-prerequisites)
-- [Installation](#🚀-installation)
+- [Overview](#overview)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
   - [Local Setup](#local-setup)
   - [Docker Setup](#docker-setup)
 - [Configuration](#configuration)
-- [Usage](#📖-usage)
-- [API Documentation](#🔌-api-documentation)
-- [Development](#🧪-development)
-- [Deployment](#🚢-deployment)
-- [Testing](#🧪-testing)
-- [Notes](#📝-notes)
-- [Approach & Design Decisions](#🎨-approach-&-design-decisions)
-- [Simplifications](#🧩-simplifications)
-- [Possible Future improvements](#🚀-possible-future-improvements)
-- [Use of AI](#🤖-use-of-ai)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Testing](#testing)
+- [Notes](#notes)
+- [Approach & Design Decisions](#approach-&-design-decisions)
+- [Simplifications](#simplifications)
+- [Possible Future improvements](#possible-future-improvements)
+- [Use of AI](#use-of-ai)
 
-## 🎯 Overview
+## Overview
 
 The Help Centre API is a RESTful service that enables intelligent search and question-answering over a corpus of help documentation. It uses vector embeddings to index documents and retrieve contextually relevant information in response to user queries.
 
@@ -37,7 +37,7 @@ The Help Centre API is a RESTful service that enables intelligent search and que
 - Production-ready containerised deployment
 - Kubernetes-ready with Helm charts
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 - **Document Indexing**: Automatically indexes documents from the data directory using LlamaIndex
@@ -60,7 +60,7 @@ The Help Centre API is a RESTful service that enables intelligent search and que
 - **Production Ready**: Configured for production deployment with proper security practices
 - **Kubernetes Ready**: Complete Helm chart for orchestration (see [helm/README.md](helm/README.md))
 
-## 🏗 Architecture
+## Architecture
 
 The application follows a clean architecture pattern with clear separation of concerns:
 
@@ -95,10 +95,10 @@ The application follows a clean architecture pattern with clear separation of co
 2. **Chunking**: Documents are split into manageable chunks (default: sentences)
 3. **Embedding**: Each chunk is converted to a vector using OpenAI embeddings
 4. **Indexing**: Vectors are stored in Pinecone for fast retrieval
-5. **Query**: User questions are embedded and similar vectors are retrieved
+5. **Query**: User questions are embedded, and similar vectors are retrieved
 6. **Synthesis**: Retrieved context is used to generate accurate answers
 
-## 🛠 Technologies
+## Technologies
 
 ### Core Framework
 - **[FastAPI](https://fastapi.tiangolo.com/)** (0.124.4) - Modern, high-performance web framework
@@ -119,7 +119,7 @@ The application follows a clean architecture pattern with clear separation of co
 - **[Helm](https://helm.sh/)** (3.x) - Kubernetes package management
 - **[Uvicorn](https://www.uvicorn.org/)** - ASGI server (via FastAPI standard)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 help_centre_api/
@@ -172,7 +172,7 @@ help_centre_api/
         └── health.py                 # Health check endpoint
 ```
 
-## 📦 Prerequisites
+## Prerequisites
 
 ### For Local Development
 - Python 3.12.4 or higher
@@ -192,7 +192,7 @@ help_centre_api/
 - **OpenAI API Key**: For embeddings and LLM capabilities
 - **Pinecone API Key**: For vector database storage
 
-## 🚀 Installation
+## Installation
 
 ### Local Setup
 
@@ -292,13 +292,13 @@ env = settings.ENV
 
 ### Indexing Configuration
 
-The document indexing behavior can be customized in `src/predict/documents_indexing.py`:
+The document indexing behaviour can be customised in `src/predict/documents_indexing.py`:
 
 - **Top-K Results**: Change `top_k=5` in `query()` method
 - **Similarity Cutoff**: Adjust `similarity_cutoff=0.4` for stricter/looser matching
 - **Vector Store Path**: Modify `dir_name` in `index()` method
 
-## 📖 Usage
+## Usage
 
 ### Starting the Application
 
@@ -337,7 +337,7 @@ print(response.json())
 4. Enter your query in the request body
 5. Click "Execute"
 
-## 🔌 API Documentation
+## API Documentation
 
 ### Endpoints
 
@@ -417,7 +417,7 @@ POST /documents-indexing
 }
 ```
 
-## 🧪 Development
+## Development
 
 ### Code Structure
 
@@ -452,7 +452,7 @@ Logs are output to stdout for Docker/Kubernetes compatibility.
 
 ### Docker Deployment
 
-The application is containerized using Docker for consistent deployment:
+The application is containerised using Docker for consistent deployment:
 
 ```dockerfile
 FROM python:3.12.4-slim-bookworm
@@ -502,13 +502,13 @@ kubectl logs -f deployment/help-centre-api -n help-centre-api
 - Use local .env file
 
 **Production**:
-- Use `fastapi run` for optimized performance
+- Use `fastapi run` for optimised performance
 - Configure proper resource limits
 - Use secrets management (Kubernetes Secrets, AWS Secrets Manager, etc.)
 - Enable monitoring and alerting
 - Use production-grade vector database settings
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing
 
@@ -527,7 +527,7 @@ python -m src.predict.documents_indexing
 This will run the example queries defined in the `__main__` block inside src/predict/documents_indexing.py.
 
 
-## 📝 Notes
+## Notes
 
 ### Vector Store Persistence
 
@@ -543,25 +543,25 @@ To force re-indexing, delete the `data/vector_store/` directory.
 
 ### Performance Considerations
 
-- **First Query**: May take longer due to Pinecone initialization
+- **First Query**: May take longer due to Pinecone initialisation
 - **Subsequent Queries**: Fast retrieval from vector store
 - **Embedding Costs**: Each new document incurs OpenAI API costs
-- **Vector Store**: Pinecone has limits on free tier
+- **Vector Store**: Pinecone has limits on the free tier
 
 
-## 🎨 Approach & Design Decisions
+## Approach & Design Decisions
 
 This project demonstrates production-ready software engineering practices while maintaining simplicity and focus:
 
 - **Modular Architecture**: Separation of concerns (routes, models, business logic) for maintainability
 - **Type Safety**: Pydantic models throughout for runtime validation and better developer experience
-- **Cloud-Native Design**: Stateless application with externalized configuration for easy scaling
+- **Cloud-Native Design**: Stateless application with externalised configuration for easy scaling
 - **Observability**: Structured logging to stdout for integration with log aggregation systems
 - **Security-First**: API keys via environment variables, never hardcoded
 - **Documentation-Driven**: Interactive API docs auto-generated from code
 
 
-## 🧩 Simplifications
+## Simplifications
 
 The assignment involves developing a RAG system within the context of a chatbot. The development of the solution followed a simplified approach to focus more on some key points:
 - The development of a working RAG system using a Pinecone database
@@ -591,17 +591,17 @@ In particular:
 - **CI/CD pipeline**: Automated builds, tests, and deployments
 
 
-## 🚀 Possible Future improvements
+## Possible Future Improvements
 
 There are several possible improvements to experiment with at different stages in the system.
 
 1. **Document Ingestion**: Text files are loaded from `data/` directory. It would be better to access data stored in a different location
 2. **Chunking**: Documents are split into manageable chunks, by sentence and depend on the default chunk size (matching the default embedding model). However, two issues can arise: the relevant information might be scattered in too many chunks and/or chunks can also contain non-relevant information that can act as a distractor. An improvement would be achieved using semantic chunking. This consists of grouping together different sentences of the document, based on their embeddings, and then chunking them. This would enhance the quality of retrieval, since the chunking would take into account the meaning and context of the text.
 3. **Embedding**: Each chunk is converted to a vector using an off-the-shelf OpenAI embedding model. Using general-purpose models can generate embeddings that are similar in general linguistic context, but they might not be ideal in the specific context and jargon used in some documents. Another possible improvement in a RAG system would be to fine-tune an embedding model for the documents used by the system. This would ensure that nuances related to context and language used would be captured by the embeddings.
-4. **Indexing**: Vectors are stored in Pinecone for fast retrieval. The index is given a fixed name and then data is stored locally to retrieve and rebuild the objects for subsequent runs of the project. To force the rebuild of the vector store, it is necessary to delete the directory where it has been saved. A better and smoother management would include an option to force rebuild by automatically deleting and recreating the vector store, without further manual intervention.
-5. **Retrieval**: The system performs semantic search to retrieve information. A first improvement would be achieved using a hybrid approach, combining semantic search with keyword-based search for better retrieval. Moreover, the specific semantic search can be further improved. User questions are embedded and the top-k similar vectors are retrieved. This is the simplest retrieval method and has some downsides. First of all, it guarantees to retrieve at least one similar vector, but this also happens when there is no actual relevant information in the chunks stored. On the other hand, the retrieval quality is dependent on the chunking method and the embedding used. Several techniques can be applied to mitigate these issues. One is to use query expansion, which involves using an LLM to generate an expected form of answer and provide it as context as an example (expansion with generated answer) or using an LLM to generate related questions to the original one and retrieve documents for all the queries (expansion with multiple queries). These techniques are helpful in mitigating issues related to distractors in chunks (the first) and scattered information (the second). Moreover, similarity in embedding does not necessarily mean actual relevance of a chunk to the query. An improvement in retrieval can be applied by re-ranking the retrieved chunks and selecting the most relevant ones based on the new ranking.
-6. **Synthesis**: Retrieved chunks are passed as context and used to generate answers. The default prompt and synthesiser are used for the purpose of this task. Further improvements can be achieved using a custom prompt and different ways to pass the chunks as context to the language model that generates the answer. Better prompt engineering could also produce answers in a form that is more pleasing to a human reader and that might better represent the company itself. Moreover, the default language model is used for the answer, hence an improvement could be achieved using the state of the art.
-7. **Nice to have**: The system uses .txt files obtained from the content of help centre web pages. However, the pages considered originally contain also images. It might be useful to have multi-modal support for images and tables.
+4. **Indexing**: Vectors are stored in Pinecone for fast retrieval. The index is given a fixed name, and then data is stored locally to retrieve and rebuild the objects for subsequent runs of the project. To force the rebuild of the vector store, it is necessary to delete the directory where it has been saved. A better and smoother management would include an option to force rebuild by automatically deleting and recreating the vector store, without further manual intervention.
+5. **Retrieval**: The system performs a semantic search to retrieve information. A first improvement would be achieved using a hybrid approach, combining semantic search with keyword-based search for better retrieval. Moreover, the specific semantic search can be further improved. User questions are embedded, and the top-k similar vectors are retrieved. This is the simplest retrieval method and has some downsides. First of all, it guarantees to retrieve at least one similar vector, but this also happens when there is no actual relevant information in the chunks stored. On the other hand, the retrieval quality is dependent on the chunking method and the embedding used. Several techniques can be applied to mitigate these issues. One is to use query expansion, which involves using an LLM to generate an expected form of answer and provide it as context as an example (expansion with generated answer) or using an LLM to generate related questions to the original one and retrieve documents for all the queries (expansion with multiple queries). These techniques help mitigate issues related to distractors in chunks (the first) and scattered information (the second). Moreover, similarity in embedding does not necessarily mean actual relevance of a chunk to the query. An improvement in retrieval can be applied by re-ranking the retrieved chunks and selecting the most relevant ones based on the new ranking.
+6. **Synthesis**: Retrieved chunks are passed as context and used to generate answers. The default prompt and synthesiser are used for this task. Further improvements can be achieved using a custom prompt and different ways to pass the chunks as context to the language model that generates the answer. Better prompt engineering could also produce answers in a form that is more pleasing to a human reader, and that might better represent the company itself. Moreover, the default language model is used for the answer, hence, an improvement could be achieved using the state of the art.
+7. **Nice to have**: The system uses .txt files obtained from the content of help centre web pages. However, the pages considered originally also contain images. It might be useful to have multi-modal support for images and tables.
 
 Considering possible priorities, improvements can be summed up as follows:
 
@@ -620,13 +620,13 @@ Considering possible priorities, improvements can be summed up as follows:
 
 
 
-## 🤖 Use of AI
+## Use of AI
 
 An AI assistant has been used in the development of this project. Specifically, Claude sonnet 4.5 has been used for the generation of the Helm files for deployment on Kubernetes environments and the relative documentation.
 
 
 
-## 👤 Author
+## Author
 
 Sandra La Mantia
 
