@@ -13,7 +13,7 @@ A production-ready FastAPI application that provides intelligent document indexi
 - [Installation](#🚀-installation)
   - [Local Setup](#local-setup)
   - [Docker Setup](#docker-setup)
-- [Configuration](#⚙️-configuration)
+- [Configuration](#configuration)
 - [Usage](#📖-usage)
 - [API Documentation](#🔌-api-documentation)
 - [Development](#🧪-development)
