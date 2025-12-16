@@ -20,7 +20,7 @@ A production-ready FastAPI application that provides intelligent document indexi
 - [Deployment](#deployment)
 - [Testing](#testing)
 - [Notes](#notes)
-- [Approach & Design Decisions](#approach-&-design-decisions)
+- [Approach & Design Decisions](#approach-and-design-decisions)
 - [Simplifications](#simplifications)
 - [Possible Future improvements](#possible-future-improvements)
 - [Use of AI](#use-of-ai)
@@ -549,7 +549,7 @@ To force re-indexing, delete the `data/vector_store/` directory.
 - **Vector Store**: Pinecone has limits on the free tier
 
 
-## Approach & Design Decisions
+## Approach and Design Decisions
 
 This project demonstrates production-ready software engineering practices while maintaining simplicity and focus:
 
