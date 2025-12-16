@@ -262,7 +262,7 @@ help_centre_api/
    - API: http://localhost
    - Interactive docs: http://localhost/docs
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 
