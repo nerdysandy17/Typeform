@@ -1,0 +1,69 @@
+Traditionally, our forms have been designed to show one question at a time. This makes them feel more conversational and increases engagement. But sometimes, you might want to streamline your form by asking multiple questions on the same page. By adding a Multi-Question Page to your form, you can do just that.
+
+When you add a Multi-Question page to your form, here's how questions will be displayed to your respondents.
+
+Supported question types 
+Checkbox
+Dropdown
+Email
+Legal 
+Long Text
+Multiple Choice
+NPS
+Opinion Scale
+Phone Number
+Ranking
+Short Text
+Statement
+Yes/No
+
+How to add a Multi-Question Page to your form
+1. Go to the form you want to edit and click + Add content.
+2. Select Multi-Question Page from the question menu. Note! If you don't see Multi-Question Page in the content menu, please follow the instructions in this article on how to add multiple question
+3. A new page will be added to your form where you can add as many questions as you like. To begin with, write your question header and a description. Note! The question header of your Multi-Question Page won't be included in downloaded results. You'll only see results for each question within your Multi-Question Page. 
+This is because the header doesn't collect results from your respondents.
+4. Click the dropdown arrow next to your header. You’ll notice a Short Text question has been added automatically. If you want to change the question type from Short Text to another question type, go to the question settings in the right-hand sidebar and choose a question type from the dropdown menu.
+5. Write your first question.
+6. Then click + Add content to add another question. 
+7. You can change your question settings in the right-hand sidebar. For example, depending on your question type, you can make the question required or set a character limit for responses.
+8. Once you’ve added all the questions you want, you’re done!
+
+If you want to add more questions to your form outside of the Multi-Question page, click + Add content and select a question type.
+
+If you select a question type that's compatible with the Multi-Question Page (see the top of this article for a full list of supported question types), it'll be placed in the Multi-Question Page by default, but you can move it by clicking and dragging it out of the Multi-Question Page.
+
+You can also click on the question type icons and drag them around to change the order within the Multi-Question Page.
+
+Similarly, you can drag and drop compatible question types into your Multi-Question Page.
+
+9. If you want to add logic to your form, head to the Workflow panel to add Branching rules and conditions to your Multi-Question Page.
+
+You can select the individual questions within your Multi-Question page to send your respondents down different paths or to segment your audience.
+
+And voilà! Here’s how our Multi-Question Page will look to our respondents.
+
+10. Once you’ve collected some responses, go to the Results panel to see your data. Answers to each question on a Multi-Question Page will be shown as standalone answers in your results, just like in forms with only one question per page.
+
+11. Similarly, when you connect a form containing a Multi-Question Page to another tool, it works just like with any other question type. You can map each question from the Multi-Question Page to a different field in the integration.
+
+Check out all our integrations here.
+
+FAQ
+
+Can I add a Partial Submit Point after the Multi-Question Page?
+You can add a Partial Submit Point after the Multi-Question Page, just like with any other question type. However, you can't add a Partial Submit Point after a specific question within your Multi-Question Page.
+
+Does the Multi-Question Page support Data Enrichment?
+Yes. You can collect enrichment data with an email question in the Multi-Question Page if it is the first email question of your form.
+
+Can I use Logic with the Multi-Question Page?
+Yes. You can use Logic to direct respondents to a Multi-Question page or use answers provided in the Multi-Question Page in Logic rules.
+
+Can I add a score or create an outcome quiz with the Multi-Question Page?
+No. Currently, adding a score or creating an outcome quiz is not supported with the Multi-Question Page.
+
+If you want to create an umbrella question with sub-questions on separate pages, check out our Question Group feature.
+
+Can I embed a Multi-Question Page in an email?
+
+No. Launching your form in an email with the Multi-Question Page as your first question is currently not supported.
