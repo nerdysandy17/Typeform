@@ -20,7 +20,7 @@ A production-ready FastAPI application that provides intelligent document indexi
 - [Deployment](#deployment)
 - [Testing](#testing)
 - [Notes](#notes)
-- [Approach & Design Decisions](#approach-and-design-decisions)
+- [Approach and Design Decisions](#approach-and-design-decisions)
 - [Simplifications](#simplifications)
 - [Possible Future improvements](#possible-future-improvements)
 - [Use of AI](#use-of-ai)
